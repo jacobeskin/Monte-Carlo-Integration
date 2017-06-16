@@ -1,0 +1,39 @@
+Calculating the volume of a N-sphere with Monte Carlo integration using
+hit-and-miss method in dimensions 1-15. Number of generated points is
+50000000. Output is the volume and statistical error of the result.
+
+Compilation instructions, running instructions and some results:
+
+Compilation:
+
+Compilation:
+$ make -f makehitandmiss
+
+Running:
+$ ./hitandmiss.exe
+  
+
+Results:
+
+The results look very good up to dimension 6, then the error starts to rise.
+I first tried runs with 1000000 points and 50000000 points, the latter giving 
+better results but still in higher dimensions not necessarily anything. I 
+suppose that by doing the runs with high enough simulation points, one
+would get something else than a null result for the highest dimensions. Here
+is a result done with 50 000 000 generated points:
+
+V is  2.0001062 with error 0.00019999 for dim  1
+V is  3.1419887 with error 0.00060673 for dim  2
+V is  4.1875045 with error 0.00138223 for dim  3
+V is  4.9287820 with error 0.00273839 for dim  4
+V is  5.2611347 with error 0.00500155 for dim  5
+V is  5.1536655 with error 0.00863766 for dim  6
+V is  4.7351174 with error 0.01437587 for dim  7
+V is  4.0699195 with error 0.02310246 for dim  8
+V is  3.2854864 with error 0.03596038 for dim  9
+V is  2.5402880 with error 0.05477135 for dim 10
+V is  2.0336476 with error 0.08488232 for dim 11
+V is  1.2542008 with error 0.11545840 for dim 12
+V is  0.7971615 with error 0.15943226 for dim 13
+V is  0.9565938 with error 0.30250149 for dim 14
+V is  0.0000000 with error 0.00000000 for dim 15

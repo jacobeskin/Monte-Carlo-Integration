@@ -1,0 +1,13 @@
+# -*-makefile-*-
+
+E3P3.exe: mtfort90.o E3P3.o
+	  gfortran -g -o E3P3.exe mtfort90.o E3P3.o
+
+mtfort90.o: mtfort90.f90
+	gfortran -g -c mtfort90.f90
+
+E3P3.o: E3P3.f90
+	gfortran -g -c E3P3.f90
+
+clean:
+	rm -f *.o E3P3.exe

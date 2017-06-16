@@ -1,0 +1,68 @@
+Calculating integral of the function (1/x^(1/3))+x^(1/4) with different methods:
+
+DS = direct sampling
+SS = stratiet sampling
+HM = hit and miss
+PSS = partially stratified sampling (100 bins)
+IS = importance sampling
+
+Calculations are done with 100, 1000, 10000, 100000 and 1000000 points. 
+Compilation instructions, running instructions and some results:
+
+Compilation:
+
+$ make -f makeintegrators
+
+Running:
+
+$ ./mcintegrators.exe 
+
+Results:
+
+First I have to remark that the importance sampling whent horribly wrong,
+I used function g(x) = x^(1/12)+1 as the smoothing function in order to reduce 
+f(x)/g(x) into A*x^(2/3), where A was the normalization constant. Anyhow, here
+are the results for a):
+
+For N=    100
+DS: DI= -.007062795495 Time=0.000000000
+SS: DI= -.021374953792 Time=0.000000000
+HM: DI= -.703480482101 Time=0.000000000
+PSS: DI= -.021688626413 Time=0.000000000
+IS: DI=  3.746331119895 Time=0.000000000
+
+For N=   1000
+DS: DI= 0.002814484576 Time=0.000000000
+SS: DI= -.004447533313 Time=0.000000000
+HM: DI= -.703480482101 Time=0.000000000
+PSS: DI= -.020922304042 Time=0.000000000
+IS: DI=  3.675295556990 Time=0.000000000
+
+For N=  10000
+DS: DI= 0.002909818744 Time=0.012000000
+SS: DI= -.000769773959 Time=0.000000000
+HM: DI= -.703480482101 Time=0.008000000
+PSS: DI= -.021095826412 Time=0.000000000
+IS: DI=  3.674166823587 Time=0.008000000
+
+For N= 100000
+DS: DI= -.001037244440 Time=0.036000000
+SS: DI= -.000182966139 Time=0.028000000
+HM: DI= -.703480482101 Time=0.028000000
+PSS: DI= -.021133760182 Time=0.024000000
+IS: DI=  3.689742300295 Time=0.024000000
+
+For N=1000000
+DS: DI= -.000526178881 Time=0.180000000
+SS: DI= -.000034481287 Time=0.176000000
+HM: DI= -.703480482101 Time=0.192000000
+PSS: DI= -.021197265776 Time=0.172000000
+IS: DI=  3.692613006556 Time=0.188000000
+ 
+If I was pressed for computer time, I guess I woud use the stratied sampling,
+it produced the most accurate result with all sample size and was at worst the 
+second fastest routine.
+
+
+ 
+  

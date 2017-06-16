@@ -1,0 +1,16 @@
+# -*-makefile-*-
+
+simplesampling.exe: mtfort90.o simplesampling.o
+	gfortran -g -o simplesampling.exe mtfort90.o simplesampling.o
+
+mtfort90.o: mtfort90.f90
+	gfortran -g -c mtfort90.f90
+
+simplesampling.o: simplesampling.f90
+	gfortran -g -c simplesampling.f90
+
+clean:
+	rm -f *.o 
+
+
+

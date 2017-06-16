@@ -1,0 +1,13 @@
+# -*-makefile-*-
+
+mcintegrals.exe: mtfort90.o mcintegrals.o
+	  gfortran -g -o mcintegrals.exe mtfort90.o mcintegrals.o
+
+mtfort90.o: mtfort90.f90
+	gfortran -g -c mtfort90.f90
+
+mcintegrals.o: mcintegrals.f90
+	gfortran -g -c mcintegrals.f90
+
+clean:
+	rm -f *.o 

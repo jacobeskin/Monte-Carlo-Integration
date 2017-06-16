@@ -1,0 +1,61 @@
+Evaluating the volume of an N-dimensional hypersphere (radius 1) with
+Monte Carlo integration using simple sampling. Integration is done for
+dimension 1 to 15, and as an output the program prints the volume and
+statistical error. Number of points generated for each integration is
+50000000.
+
+Compilation:
+$ make -f makesimplesampling
+
+Running:
+$ ./simplesampling.exe
+
+Results:
+
+The volumes where calculated also by generating 50 000 000 points. The results
+for lower dimension look pretty good, and the statistical error is quite small.
+For higher dimensions the result starts drifting away from the exact value,
+probably due to amount of points generated landing in the sphere. The 
+dimension printed is actually the dimension of the function f, which means
+that the volume is actually one dimension higher, unlike in the previous 
+problem.
+
+V is  3.1415614 with error 0.00006313 for dim  1
+V is  4.1886242 with error 0.00010471 for dim  2
+V is  4.9358628 with error 0.00013639 for dim  3
+V is  5.2636470 with error 0.00015428 for dim  4
+V is  5.1709583 with error 0.00015753 for dim  5
+V is  4.7276653 with error 0.00014813 for dim  6
+V is  4.0563938 with error 0.00012994 for dim  7
+V is  3.2978053 with error 0.00010721 for dim  8
+V is  2.5448034 with error 0.00008395 for dim  9
+V is  1.8710595 with error 0.00006332 for dim 10
+V is  1.3909103 with error 0.00004428 for dim 11
+V is  0.9552057 with error 0.00003029 for dim 12
+V is  0.4863847 with error 0.00001568 for dim 13
+V is  0.2626325 with error 0.00001011 for dim 14
+V is  0.2209525 with error 0.00000456 for dim 15
+
+Comparing this to the hit&miss routine, we have to look at dimension 
+differently (this is due to me writing the codes in that way partly by accident)
+Lets compare the results (above dim 1->14, from H&M dim 2->15)
+
+Sampling        Hit&Miss 	
+
+3.1415614	3.1419887	
+4.1886242	4.1875045	
+4.9358628	4.9287820
+5.2636470	5.2611347
+5.1709583	5.1536655
+4.7276653	4.7351174
+4.0563938	4.0699195
+3.2978053	3.2854864
+2.5448034	2.5402880
+1.8710595	2.0336476
+1.3909103	1.2542008
+0.9552057	0.7971615
+0.4863847	0.9565938
+0.2626325	0.0000000
+
+The statistical errors calculated where much smaller in the sampling method,
+and the results diverge as the dimensionality rises.
